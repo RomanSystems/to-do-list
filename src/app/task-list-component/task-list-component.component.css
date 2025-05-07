@@ -1,0 +1,21 @@
+.titulo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tarjeta{
+  color: white;
+  width: 500px;
+  margin: 1rem;
+}
+
+.tarjeta-contenido{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tarjeta-acciones{
+  display: flex;
+  gap: 1rem;
+}

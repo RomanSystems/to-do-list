@@ -1,0 +1,63 @@
+<h1>LISTA DE TAREAS</h1>
+
+<div class="titulo">
+  <h2>HOY</h2>
+  <button mat-mini-fab aria-label="">
+    <mat-icon fontIcon="add"></mat-icon>
+  </button>
+</div>
+
+@for (item of [
+  {title: 'Abrir Power Point', time: "02:30 PM"},
+  {title: 'Instalar Angular', time: "02:35 PM"},
+  {title: 'Instalar Angular Material', time: "03:05 PM"},
+  {title: 'Sacar Captura de instalacion', time: "04:30 PM"},
+]; track item.title) {
+  <mat-card class="tarjeta">
+    <mat-card-header></mat-card-header>
+    <mat-card-content class="tarjeta-contenido">
+      <div class="tarjeta-letras">
+        <p>{{ item.title }}</p>
+        <small>{{ item.time }}</small>
+      </div>
+      <mat-card-actions class="tarjeta-acciones">
+        <button mat-mini-fab aria-label="">
+          <mat-icon aria-hidden="false" aria-label="" fontIcon="edit"></mat-icon>
+        </button>
+        <button mat-mini-fab aria-label="">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <mat-slide-toggle></mat-slide-toggle>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+}
+
+<div class="titulo">
+  <h2>AYER</h2>
+</div>
+
+@for (item of [
+  {title: 'Desayunar', time: "06:30 AM"},
+  {title: 'Asearse', time: "06:55 AM"},
+  {title: 'Ir al trabajo', time: "07:15 AM"},
+]; track item.title) {
+  <mat-card class="tarjeta">
+    <mat-card-header></mat-card-header>
+    <mat-card-content class="tarjeta-contenido">
+      <div class="tarjeta-letras">
+        <p>{{ item.title }}</p>
+        <small>{{ item.time }}</small>
+      </div>
+      <mat-card-actions class="tarjeta-acciones">
+        <button mat-mini-fab aria-label="">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+        </button>
+        <button mat-mini-fab aria-label="">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <mat-slide-toggle></mat-slide-toggle>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+}

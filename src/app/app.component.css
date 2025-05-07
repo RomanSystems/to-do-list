@@ -1,0 +1,13 @@
+.main{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 530px;
+}

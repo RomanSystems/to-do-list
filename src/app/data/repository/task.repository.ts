@@ -5,10 +5,8 @@ import {TaskModel} from '../../core/models/task.model';
   providedIn: 'root'
 })
 export class TaskRepository{
-
   localKey: string = "task-list";
   localKeyYest: string = "task-list-yesterday";
-
   /*https://dummyjson.com/todos*/
   fer: any = {
     "todos": [

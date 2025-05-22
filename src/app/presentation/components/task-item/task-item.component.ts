@@ -8,7 +8,8 @@ import {TaskModel} from '../../../core/models/task.model';
 
 @Component({
   selector: 'app-task-item',
-  imports: [MatSlideToggleModule, MatCard, MatCardHeader, MatCardContent, MatCardActions, MatIcon, MatButtonModule, MatCheckboxModule],
+  imports: [MatSlideToggleModule, MatCard, MatCardHeader, MatCardContent,
+    MatCardActions, MatIcon, MatButtonModule, MatCheckboxModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

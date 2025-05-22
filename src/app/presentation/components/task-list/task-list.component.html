@@ -1,31 +1,21 @@
 <h1>LISTA DE TAREAS</h1>
-<!--<app-dialog-overview></app-dialog-overview>-->
 <div>
   <div class="titulo">
     <h2>HOY</h2>
     <button mat-mini-fab aria-label="" (click)="openDialog()">
       <mat-icon fontIcon="add"></mat-icon>
     </button>
-    <!--@if (todo_m()) {
-      <li>
-        You chose: <em>{{todo_m()}}</em>
-      </li>
-    }-->
   </div>
   <h5>pendiente</h5>
   @for (item of tasksTodayNo; track item.id) {
-    <app-task-item [task]="item"
-                   (editor)="onEditTaskDialog($event)"
-                   (delete)="onDeleteTask($event)"
+    <app-task-item [task]="item" (editor)="onEditTaskDialog($event)" (delete)="onDeleteTask($event)"
                    (checked)="onCheckedTask($event)"></app-task-item>
   } @empty {
     <small><i>no hay pendientes</i></small>
   }
   <h5>Completado</h5>
   @for (item of tasksTodayOk; track item.id) {
-    <app-task-item [task]="item"
-                   (editor)="onEditTaskDialog($event)"
-                   (delete)="onDeleteTask($event)"
+    <app-task-item [task]="item" (editor)="onEditTaskDialog($event)" (delete)="onDeleteTask($event)"
                    (checked)="onCheckedTask($event)"></app-task-item>
   } @empty {
     <small><i>no hay completados</i></small>

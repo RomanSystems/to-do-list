@@ -1,9 +1,25 @@
-<h2 mat-dialog-title>Hola {{data.userId_m}}</h2>
+<h2 mat-dialog-title>Hola {{ data.userId_m }}</h2>
 <mat-dialog-content>
   <p>¿Qué tienes planeado para hoy?</p>
   <mat-form-field>
     <mat-label>Tarea</mat-label>
-    <input matInput [(ngModel)]="todo_m" />
+    <input matInput [(ngModel)]="todo_m" #nombreCtrl="ngModel" required maxlength="10" minlength="4"/>
+    @if (nombreCtrl.invalid && nombreCtrl.touched) {
+      <div class="errores">
+        @if (nombreCtrl.errors?.['required']) {
+          <div>El nombre es obligatorio.</div>
+        }
+        @if (nombreCtrl.errors?.['minlength']) {
+          <div>
+            Mínimo {{ nombreCtrl.errors?.['minlength'].requiredLength }} caracteres.
+            Actual: {{ nombreCtrl.errors?.['minlength'].actualLength }}.
+          </div>
+        }
+        @if (nombreCtrl.errors?.['maxlength']) {
+          Máximo {{ nombreCtrl.errors?.['maxlength'].requiredLength }} caracteres. Actual: {{ nombreCtrl.errors?.['maxlength'].actualLength }}.
+        }
+      </div>
+    }
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>

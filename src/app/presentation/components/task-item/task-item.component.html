@@ -1,0 +1,18 @@
+<mat-card class="tarjeta">
+  <mat-card-header></mat-card-header>
+  <mat-card-content class="tarjeta-contenido">
+    <div class="tarjeta-letras">
+      <p>{{ task.todo }}</p>
+      <small>{{ task.time }}</small>
+    </div>
+    <mat-card-actions class="tarjeta-acciones">
+      <button mat-mini-fab aria-label="" (click)="editTask(task)">
+        <mat-icon aria-hidden="false" aria-label="" fontIcon="edit"></mat-icon>
+      </button>
+      <button mat-mini-fab aria-label="" (click)="deleteTask(task)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <mat-checkbox [checked]="task.completed" (change)="checkedTask($event.checked, task)"></mat-checkbox>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

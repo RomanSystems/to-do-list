@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Hola {{data.userId_m}}</h2>
+<mat-dialog-content>
+  <p>¿Qué tienes planeado para hoy?</p>
+  <mat-form-field>
+    <mat-label>Tarea</mat-label>
+    <input matInput [(ngModel)]="todo_m" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Nada</button>
+  <button mat-button [mat-dialog-close]="todo_m()" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

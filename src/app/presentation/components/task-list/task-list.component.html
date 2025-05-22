@@ -9,7 +9,7 @@
   <h5>pendiente</h5>
   @for (item of tasksTodayNo; track item.id) {
     <app-task-item [task]="item" (editor)="onEditTaskDialog($event)" (delete)="onDeleteTask($event)"
-                   (checked)="onCheckedTask($event)"></app-task-item>
+                   (checked)="onCheckedTask($event)" (click)="goToDetail(item.id)"></app-task-item>
   } @empty {
     <small><i>no hay pendientes</i></small>
   }

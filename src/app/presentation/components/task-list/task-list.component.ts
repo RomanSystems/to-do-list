@@ -20,6 +20,7 @@ import {
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {DialogOverviewExampleDialog} from '../dialog-overview/dialog-overview-example-dialog';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -109,6 +110,12 @@ export class TaskListComponent implements OnInit {
       this.taskService.removeTaskFromList(data.task.id);
       this.refreshData();
     }
+  }
+
+  private router = inject(Router);
+
+  goToDetail(id: number) {
+    this.router.navigate(['/detail', id]);
   }
 }
 

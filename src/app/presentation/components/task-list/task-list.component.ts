@@ -39,8 +39,11 @@ export class TaskListComponent implements OnInit {
   readonly userId_m = model(0);
   readonly dialog = inject(MatDialog);
 
-  taskRepository = inject(TaskRepository);
   taskService = inject(TaskService);
+  taskRepository = inject(TaskRepository);
+
+  tasks: TaskModel[] = [];
+  tasksy: TaskModel[] = [];
 
   tasksTodayOk: TaskModel[] = new Array<TaskModel>();
   tasksTodayNo: TaskModel[] = new Array<TaskModel>();
@@ -48,6 +51,12 @@ export class TaskListComponent implements OnInit {
   taskYesterdayNo: TaskModel[] = new Array<TaskModel>();
 
   refreshData() {
+    /*this.taskService.getTasks()?.subscribe(prod => {
+      this.tasks = prod.todos
+      this.tasksTodayOk = this.tasks?.filter((it: TaskModel) => it.completed);
+      this.tasksTodayNo = this.tasks?.filter((it: TaskModel) => !it.completed);
+    });*/
+
     this.tasksTodayOk = this.taskRepository.getTasks()?.filter((it: TaskModel) => it.completed);
     this.tasksTodayNo = this.taskRepository.getTasks()?.filter((it: TaskModel) => !it.completed);
     this.taskYesterdayOk = this.taskRepository.getTasksYes()?.filter((it: TaskModel) => it.completed);

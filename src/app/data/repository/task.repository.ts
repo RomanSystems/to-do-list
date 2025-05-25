@@ -110,8 +110,9 @@ export class TaskRepository{
   ]
 
   chargeInitialization(): void{
+    // supongase que cambiamos de proveedr de datos de Postgres a MongoDB
     this.storeTask(this.tasksTodays);
-    this.saveTasksYes(this.taskYesterdays);
+    this.storeTaskYes(this.taskYesterdays);
   }
 
   getTasks(): TaskModel[] {
@@ -128,7 +129,7 @@ export class TaskRepository{
     return data ? JSON.parse(data) : [];
   }
 
-  saveTasksYes(cart: TaskModel[]) {
+  storeTaskYes(cart: TaskModel[]) {
     localStorage.setItem(this.localKeyYest, JSON.stringify(cart));
   }
 }

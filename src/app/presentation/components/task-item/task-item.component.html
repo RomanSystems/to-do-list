@@ -6,13 +6,15 @@
       <small>{{ task.time }}</small>
     </div>
     <mat-card-actions class="tarjeta-acciones">
-      <button mat-mini-fab aria-label="" (click)="editTask(task)">
+      <button mat-mini-fab aria-label="" (click)="editTask(task);$event.stopPropagation()">
         <mat-icon aria-hidden="false" aria-label="" fontIcon="edit"></mat-icon>
       </button>
-      <button mat-mini-fab aria-label="" (click)="deleteTask(task)">
+      <button mat-mini-fab aria-label="" (click)="deleteTask(task);$event.stopPropagation()">
         <mat-icon>delete</mat-icon>
       </button>
-      <mat-checkbox [checked]="task.completed" (change)="checkedTask($event.checked, task)"></mat-checkbox>
+      <mat-checkbox [checked]="task.completed"
+                    (click)="$event.stopPropagation()"
+                    (change)="checkedTask($event.checked, task)"></mat-checkbox>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>
